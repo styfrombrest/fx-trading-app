@@ -1,7 +1,7 @@
 export const color = {
   black: '#000',
   white: '#fff',
-  blue: '#355990',
+  blue: '#337ab7',
   silver: '#d8d8da',
   sundownRed: '#ffb2b2',
   whiteIceGreen: '#f0fcf3',
@@ -11,7 +11,6 @@ export const color = {
 };
 
 export const headerBgColor = color.blue;
-export const headerBorderColor = '#1e3b68';
 
 // ACTIONS
 export const LOAD_DATA_START = 'LOAD_DATA_START';

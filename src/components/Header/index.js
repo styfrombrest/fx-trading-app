@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { headerBgColor, headerBorderColor, color } from './../../consts';
+import { headerBgColor, color } from './../../consts';
 
 const HeaderElement = styled.header`
   background-color: ${headerBgColor};
-  border-top: 1em solid ${headerBorderColor};
   box-sizing: content-box;
   text-align: left;
 `;
