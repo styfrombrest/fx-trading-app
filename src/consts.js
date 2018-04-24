@@ -13,6 +13,6 @@ export const color = {
 export const headerBgColor = color.blue;
 
 // ACTIONS
-export const LOAD_DATA_START = 'LOAD_DATA_START';
-export const LOAD_DATA_SUCCESS = 'LOAD_DATA_SUCCESS';
-export const LOAD_DATA_FAILURE = 'LOAD_DATA_FAILURE';
+export const LOAD_INIT_DATA_START = 'LOAD_INIT_DATA_START';
+export const LOAD_INIT_DATA_SUCCESS = 'LOAD_INIT_DATA_SUCCESS';
+export const LOAD_INIT_DATA_FAILURE = 'LOAD_INIT_DATA_FAILURE';

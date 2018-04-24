@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import { Row, Col, Panel, Label } from 'react-bootstrap';
 
 import { color } from './../../consts';
+import Arrow from './../Arrow';
+import CurrencyView from './../CurrencyView';
 
 const PanelWrapper = styled(Col)`
   width: 300px;
@@ -24,22 +26,9 @@ const Pad = styled(Panel)`
   }
 `;
 
-const UpArrow = (
-  <span className="glyphicon glyphicon-arrow-up green" aria-hidden="true" />
-);
-
-const DownArrow = (
-  <span className="glyphicon glyphicon-arrow-down red" aria-hidden="true" />
-);
-
 const Caption = styled.p`
   font-size: 12px;
   font-weight: 700;
-`;
-
-const Value = styled.p`
-  font-size: 18px;
-  font-weight: 400;
 `;
 
 const TradePanel = props => {
@@ -57,19 +46,16 @@ const TradePanel = props => {
             <PadWrapper xs={5} className="red">
               <Pad>
                 <Caption>Sell {currency}</Caption>
-                <Value>{props.sell}</Value>
+                <CurrencyView value={props.sellValue} />
               </Pad>
             </PadWrapper>
-            <Col xs={2}>{UpArrow}</Col>
+            <Col xs={2}>
+              <Arrow state={props.arrowState} />
+            </Col>
             <PadWrapper xs={5} className="green">
               <Pad className="text-right">
                 <Caption>Buy {currency}</Caption>
-                <Value>
-                  {props.buy}
-                  {/*                 1.44<span style={{ fontSize: '22px', fontWeight: 900 }}>
-                  44
-                </span> */}
-                </Value>
+                <CurrencyView value={props.buyValue} />
               </Pad>
             </PadWrapper>
           </Row>
@@ -83,6 +69,7 @@ export default TradePanel;
 
 TradePanel.propTypes = {
   title: PropTypes.string.isRequired,
-  buy: PropTypes.number.isRequired,
-  sell: PropTypes.number.isRequired,
+  buyValue: PropTypes.number.isRequired,
+  sellValue: PropTypes.number.isRequired,
+  arrowState: PropTypes.string,
 };

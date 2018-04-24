@@ -28,5 +28,10 @@
     "pair": "EUR JPY",
     "buy": 120.589,
     "sell": 120.491
+  },
+  {
+    "pair": "BYN RUB",
+    "buy": 120,
+    "sell": 122
   }
 ]
