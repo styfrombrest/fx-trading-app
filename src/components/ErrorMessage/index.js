@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import { Row, Col, Alert, Button } from 'react-bootstrap';
 
 const ErrorMessage = props => {
@@ -8,7 +7,7 @@ const ErrorMessage = props => {
     <Row>
       <Col xs={12}>
         <Alert bsStyle="danger" className="text-left">
-          <h4>Oh snap! You got an error!</h4>
+          <h4>Error!</h4>
           <p>{props.message}</p>
           <p>
             <Button bsStyle="danger" onClick={() => props.reloadHandler()}>

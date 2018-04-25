@@ -1,8 +1,6 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
+import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { Row, Col } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 
 import { loadData } from './../../actions/';
 import Page from './../../components/Page';
@@ -16,7 +14,7 @@ const mapStateToProps = state => ({
 });
 const mapDispatchToProps = { loadData };
 
-class Home extends Component {
+class Home extends React.Component {
   state = { data: {} };
 
   static getDerivedStateFromProps(props, state) {
@@ -32,6 +30,7 @@ class Home extends Component {
           }
         }
         state.data[item] = { ...props.data[item], arrowState };
+        return true;
       });
     }
     return state;
@@ -42,10 +41,11 @@ class Home extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (this.props.error === null)
+    if (this.props.error === null) {
       setTimeout(() => {
         this.props.loadData();
       }, reloadTimeout || 5000);
+    }
   }
 
   render() {
@@ -57,7 +57,7 @@ class Home extends Component {
           message={error}
           reloadHandler={() => this.props.loadData()}
         />
-        <Row>
+        <Row className="text-center">
           {data && Object.keys(data).length ? (
             Object.keys(data).map(item => (
               <TradePanel

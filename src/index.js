@@ -12,7 +12,6 @@ import './assets/bootstrap.min.css';
 import './global-styles';
 
 import Home from './containers/Home';
-import Page404 from './containers/Page404';
 import reducers from './reducers';
 import registerServiceWorker from './registerServiceWorker';
 
@@ -31,8 +30,7 @@ ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route component={Page404} />
+        <Route component={Home} />
       </Switch>
     </ConnectedRouter>
   </Provider>,

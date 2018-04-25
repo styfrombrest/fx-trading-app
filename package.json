@@ -1,6 +1,12 @@
 {
-  "name": "react-app-skeleton",
-  "version": "0.1.0",
+  "name": "fx-trading-app",
+  "version": "1.0.0",
+  "description": "Todo app",
+  "main": "index.js",
+  "repository": "github:styfrombrest/fx-trading-app",
+  "author": "Taras <sty.brest@gmail.com> (https://styfrombrest.tk)",
+  "license": "MIT",
+  "homepage": "https://mydebian.tk/fx-trading-app",
   "private": true,
   "dependencies": {
     "bootstrap": "^3.3.7",

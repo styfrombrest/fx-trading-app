@@ -1,13 +1,44 @@
-# React-app-skeleton
+# FX trading app
 
-Starter kit for React apps based on Create-React-App.
+This is my implementation of a FX trading app.
+It uses HTML5, CSS3, React, Redux, Styled-Components & Bootstrap.
 
-### Included:
+App based on React Create App boilerplate and was tested on Chromium 65, Google Chrome Mobile 65, Firefox 59, IE 11.
 
-* Create-react-app
-* Airbnb code style config for Eslint
-* React-Bootstrap based on Bootstrap v3.3.7
-* Styled-components for styling
-* Prop-types for typechecking
-* Redux/Redux-thunk/Redux devtools extension
-* React Router/React Router Redux **_v5 alpha_**/History
+You can check it [online](https://mydebian.tk/fx-trading-app/index.html) or run it locally, following the instruction below.
+
+![Screenshot](./public/screenshot.png 'Screenshot')
+
+## How to run locally
+
+For first you should have installed:
+
+* Node.js
+* NPM
+* Patience
+
+Open terminal and clone project from git:
+
+`git clone https://github.com/styfrombrest/fx-trading-app.git`
+
+Enter to dir by command:
+
+`cd fx-trading-app`
+
+Then install all app's dependencies:
+
+`npm install`
+
+To run App locally use:
+
+`npm start`
+
+Enjoy ;)
+
+## Known issues
+
+* Not found
+
+Thanks for attention.
+
+Taras Semenyuk, 2018

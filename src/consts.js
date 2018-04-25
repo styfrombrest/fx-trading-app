@@ -8,8 +8,6 @@ export const color = {
 
 export const reloadTimeout = 1000;
 
-export const headerBgColor = color.blue;
-
 // ACTIONS
 export const LOADING_DATA_START = 'LOADING_DATA_START';
 export const LOADING_DATA_SUCCESS = 'LOADING_DATA_SUCCESS';

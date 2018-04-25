@@ -16,16 +16,12 @@ export default async () =>
     try {
       // upgrading MOCK's buy & sell values
       // might be used with delay for testing
-      setTimeout(
-        () =>
-          resolve(
-            data.map(item => ({
-              ...item,
-              buy: valueUpgrade(item.buy),
-              sell: valueUpgrade(item.buy),
-            }))
-          ),
-        1
+      resolve(
+        data.map(item => ({
+          ...item,
+          buy: valueUpgrade(item.buy),
+          sell: valueUpgrade(item.buy),
+        }))
       );
     } catch (e) {
       console.error(e);

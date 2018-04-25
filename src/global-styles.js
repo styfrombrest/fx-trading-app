@@ -21,18 +21,4 @@ body {
 #app {
   text-align: center;
 }
-
-.red {
-  color: ${color.red}
-}
-
-.green {
-  color: ${color.green}
-}
-
-/* .container {
-  max-width: 1200px;
-  margin: 0 auto;
-} */
-
 `;
