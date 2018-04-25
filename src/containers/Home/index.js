@@ -7,7 +7,8 @@ import { Row, Col } from 'react-bootstrap';
 import { loadData } from './../../actions/';
 import Page from './../../components/Page';
 import TradePanel from './../../components/TradePanel';
-import ErrorMessage from '../../components/ErrorMessage';
+import ErrorMessage from './../../components/ErrorMessage';
+import { reloadTimeout } from './../../consts';
 
 const mapStateToProps = state => ({
   data: state.data,
@@ -19,7 +20,6 @@ class Home extends Component {
   state = { data: {} };
 
   static getDerivedStateFromProps(props, state) {
-    // console.log('!', props.data);
     if (props.data) {
       // handle arrow state according to buy value changes
       Object.keys(props.data).map(item => {
@@ -41,13 +41,16 @@ class Home extends Component {
     this.props.loadData();
   }
 
-  componentDidUpdate() {
-    // if (this.props.error === null)
-    // setTimeout(() => this.props.loadData(), 1000);
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.error === null)
+      setTimeout(() => {
+        this.props.loadData();
+      }, reloadTimeout || 5000);
   }
 
   render() {
-    const { error, data } = this.props;
+    const { error } = this.props;
+    const { data } = this.state;
     return (
       <Page headerTitle="FX Trading App">
         <ErrorMessage
@@ -55,7 +58,7 @@ class Home extends Component {
           reloadHandler={() => this.props.loadData()}
         />
         <Row>
-          {data ? (
+          {data && Object.keys(data).length ? (
             Object.keys(data).map(item => (
               <TradePanel
                 key={item}
@@ -66,7 +69,7 @@ class Home extends Component {
               />
             ))
           ) : (
-            <span>No data</span>
+            <span>{'No data from API :('}</span>
           )}
         </Row>
       </Page>

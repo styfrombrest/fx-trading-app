@@ -1,7 +1,7 @@
 import {
-  LOAD_INIT_DATA_START,
-  LOAD_INIT_DATA_SUCCESS,
-  LOAD_INIT_DATA_FAILURE,
+  LOADING_DATA_START,
+  LOADING_DATA_SUCCESS,
+  LOADING_DATA_FAILURE,
 } from './../consts';
 
 const initialState = {
@@ -11,14 +11,15 @@ const initialState = {
 
 export default (state = initialState, { type, payload }) => {
   switch (type) {
-    case LOAD_INIT_DATA_START:
-      return { ...state, data: [] };
-    case LOAD_INIT_DATA_SUCCESS:
+    case LOADING_DATA_START:
+      return state;
+    case LOADING_DATA_SUCCESS:
       return {
         ...state,
         data: payload,
+        error: null,
       };
-    case LOAD_INIT_DATA_FAILURE:
+    case LOADING_DATA_FAILURE:
       return { ...state, error: payload, data: null };
 
     default:

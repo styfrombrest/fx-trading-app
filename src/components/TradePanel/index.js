@@ -19,6 +19,7 @@ const PadWrapper = styled(Col)`
 
 const Pad = styled(Panel)`
   padding: 5px;
+  margin-bottom: 0;
 
   &:hover {
     border: 1px solid ${color.blue};

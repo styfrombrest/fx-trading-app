@@ -1,13 +1,13 @@
 import {
-  LOAD_INIT_DATA_START,
-  LOAD_INIT_DATA_SUCCESS,
-  LOAD_INIT_DATA_FAILURE,
+  LOADING_DATA_START,
+  LOADING_DATA_SUCCESS,
+  LOADING_DATA_FAILURE,
 } from './../consts';
 import fetchDataApi from './../api/fetchData';
 
 export const loadData = () => async dispatch => {
   dispatch({
-    type: LOAD_INIT_DATA_START,
+    type: LOADING_DATA_START,
   });
 
   try {
@@ -18,12 +18,12 @@ export const loadData = () => async dispatch => {
     );
 
     dispatch({
-      type: LOAD_INIT_DATA_SUCCESS,
+      type: LOADING_DATA_SUCCESS,
       payload: transformedData,
     });
   } catch (err) {
     dispatch({
-      type: LOAD_INIT_DATA_FAILURE,
+      type: LOADING_DATA_FAILURE,
       payload: err,
     });
   }

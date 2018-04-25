@@ -2,17 +2,15 @@ export const color = {
   black: '#000',
   white: '#fff',
   blue: '#337ab7',
-  silver: '#d8d8da',
-  sundownRed: '#ffb2b2',
-  whiteIceGreen: '#f0fcf3',
-  orange: '#ff8e1d',
   green: '#7cc580',
   red: '#FF0000',
 };
 
+export const reloadTimeout = 1000;
+
 export const headerBgColor = color.blue;
 
 // ACTIONS
-export const LOAD_INIT_DATA_START = 'LOAD_INIT_DATA_START';
-export const LOAD_INIT_DATA_SUCCESS = 'LOAD_INIT_DATA_SUCCESS';
-export const LOAD_INIT_DATA_FAILURE = 'LOAD_INIT_DATA_FAILURE';
+export const LOADING_DATA_START = 'LOADING_DATA_START';
+export const LOADING_DATA_SUCCESS = 'LOADING_DATA_SUCCESS';
+export const LOADING_DATA_FAILURE = 'LOADING_DATA_FAILURE';
